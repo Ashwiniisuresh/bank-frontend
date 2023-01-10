@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form (ngSubmit)="register()" class="login" [formGroup]="registerForm">
+                <h1>Register</h1>
+                <div class="login__field">
+					<input name="uname" formControlName="uname" type="text" class="login__input" placeholder=" User Name">
+				</div>
+                <div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: red">
+					Invalid User Name
+				</div>
+                
+				<div class="login__field">
+					<input name="acno" formControlName="acno" type="text" class="login__input" placeholder="Account number">
+				</div>
+				<div *ngIf="this.registerForm.get('acno')?.touched&&this.registerForm.get('acno')?.errors" style="color: red">
+					Invalid Account Number
+				</div>
+				<div class="login__field">
+                
+					<input  name="pswd" formControlName="pswd" type="password" class="login__input" placeholder="Password">
+				</div>
+				<div *ngIf="this.registerForm.get('pswd')?.touched&&this.registerForm.get('pswd')?.errors" style="color: red">
+					Invalid Password
+				</div>
+				<button class="button login__submit" type="submit">
+					<span class="button__text"> Register Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>	
+                
+                   <div class="bottom">
+                        <h5>
+							<span>New User?click here to <a href="/">Login</a> </span>
+                           
+                        </h5> 
+                        
+                   </div>
+            		
+			</form>
+			
+		</div>
+		<div class="screen__background">
+			<span class="screen_backgroundshape screenbackground_shape4"></span>
+			<span class="screen_backgroundshape screenbackground_shape3"></span>		
+			<span class="screen_backgroundshape screenbackground_shape2"></span>
+			<span class="screen_backgroundshape screenbackground_shape1"></span>
+		</div>		
+	</div>
+</div>
